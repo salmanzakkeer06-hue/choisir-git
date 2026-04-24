@@ -1,32 +1,18 @@
-/* =========================
-   GLOBAL
-========================= */
 body {
-    font-family: 'Segoe UI', sans-serif;
     margin: 0;
-    background: #f5f7fa;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* =========================
-   NAVBAR
-========================= */
+/* NAVBAR */
 .navbar {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     padding: 15px 8%;
     background: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    position: relative;
 }
 
-/* LOGO */
 .logo {
     display: flex;
     align-items: center;
@@ -35,11 +21,6 @@ img {
 
 .logo img {
     width: 25px;
-}
-
-.logo span {
-    font-weight: bold;
-    color: #28a745;
 }
 
 /* NAV LINKS */
@@ -51,211 +32,69 @@ img {
 .nav-links a {
     text-decoration: none;
     color: #333;
-    font-weight: 500;
-}
-
-.nav-links a:hover {
-    color: #28a745;
-}
-
-/* CONTACT BUTTON */
-.contact-btn {
-    padding: 8px 18px;
-    border-radius: 20px;
-    border: none;
-    background: #28a745;
-    color: white;
-    cursor: pointer;
 }
 
 /* HAMBURGER */
 .menu-toggle {
     display: none;
-    font-size: 26px;
+    font-size: 25px;
     cursor: pointer;
 }
 
-/* =========================
-   HERO SECTION
-========================= */
+/* HERO */
 .hero {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 60px 10%;
-    background: #eef2f5;
-    flex-wrap: wrap;
+    padding: 40px;
 }
 
-.hero-text {
-    max-width: 500px;
+.hero img {
+    width: 300px;
 }
 
-.hero-text h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-    color: #1a1a1a;
-}
-
-.hero-text p {
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: #555;
-}
-
-.btn {
-    background: #28a745;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-}
-
-.hero-image img {
-    width: 400px;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-/* =========================
-   ABOUT
-========================= */
-.about {
-    padding: 60px 8%;
-    background: white;
-}
-
+/* ABOUT */
 .about-container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
+    padding: 40px;
 }
 
-.about-text {
-    max-width: 500px;
+.about img {
+    width: 300px;
 }
 
-.about-text h2 {
-    font-size: 32px;
-}
-
-.about-text p {
-    color: #555;
-}
-
-.about-image img {
-    width: 350px;
-    border-radius: 10px;
-}
-
-/* =========================
-   SERVICES
-========================= */
+/* SERVICES */
 .services-container {
     display: flex;
-    flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
 
-/* SERVICE CARD */
 .service-card {
-    width: 280px;
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: 0.3s;
+    width: 200px;
 }
 
-.service-card:hover {
-    transform: translateY(-5px);
-}
-
-.service-card img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-/* =========================
-   BLOG
-========================= */
+/* BLOG */
 .blog-container {
     display: flex;
-    flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
 
 .blog-card {
-    width: 280px;
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
+    width: 200px;
 }
 
-.blog-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.blog-card a {
-    color: #007bff;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-/* =========================
-   CONTACT
-========================= */
+/* CONTACT */
 .contact-container {
     display: flex;
-    flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
 
-.contact-card {
-    width: 260px;
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.icon {
-    font-size: 30px;
-}
-
-.highlight {
-    color: green;
-    font-weight: bold;
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer {
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 15px;
-}
-
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
+/* MOBILE */
 @media (max-width: 768px) {
 
-    /* NAVBAR */
     .menu-toggle {
         display: block;
     }
@@ -263,48 +102,23 @@ footer {
     .nav-links {
         display: none;
         flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
         width: 100%;
         background: white;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        padding: 10px 0;
     }
 
     .nav-links.active {
         display: flex;
     }
 
-    .nav-links a {
-        padding: 12px;
-        text-align: center;
-    }
-
-    .contact-btn {
-        display: none;
-    }
-
-    /* HERO */
-    .hero {
+    .hero,
+    .about-container,
+    .services-container,
+    .blog-container,
+    .contact-container {
         flex-direction: column;
-        text-align: center;
-        padding: 30px 5%;
-    }
-
-    .hero-text h1 {
-        font-size: 32px;
-    }
-
-    /* ABOUT */
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    /* CARDS */
-    .service-card,
-    .blog-card,
-    .contact-card {
-        width: 90%;
+        align-items: center;
     }
 }
