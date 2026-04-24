@@ -302,4 +302,79 @@ nav a:hover {
     font-weight: bold;
     color: #28a745;
     font-size: 18px;
+}/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .contact-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* HERO SECTION */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 5%;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .hero-image img {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    /* ABOUT */
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 100%;
+    }
+
+    /* SERVICES */
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* BLOG */
+    .blog-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .blog-card {
+        width: 90%;
+    }
+
+    /* CONTACT */
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-card {
+        width: 90%;
+    }
+}img {
+    max-width: 100%;
+    height: auto;
 }
