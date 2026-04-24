@@ -377,4 +377,49 @@ nav a:hover {
 }img {
     max-width: 100%;
     height: auto;
+}/* HAMBURGER (hidden on desktop) */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    /* SHOW HAMBURGER */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* HIDE MENU */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        margin-top: 10px;
+        border-radius: 10px;
+        padding: 10px 0;
+    }
+
+    /* SHOW MENU WHEN ACTIVE */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 10px;
+        text-align: center;
+    }
+
+    /* BUTTON FULL WIDTH */
+    .contact-btn {
+        width: 100%;
+        margin-top: 10px;
+    }
 }

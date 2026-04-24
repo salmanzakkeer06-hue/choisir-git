@@ -11,14 +11,17 @@
 <body>
 
 
- <header class="navbar">
+<header class="navbar">
 
   <div class="logo">
-    <img src="logo.png.jpg" alt="logo">
+    <img src="logo.jpg" alt="logo">
     <span>CHOISIR CRAFT</span>
   </div>
 
-  <nav class="nav-links">
+  <!-- MENU BUTTON (HAMBURGER) -->
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <nav class="nav-links" id="navLinks">
     <a href="#home" class="active">Home</a>
     <a href="#about">About</a>
     <a href="#services">Services</a>
@@ -178,6 +181,10 @@
     <footer>
         <p>© 2026 Choisir Craft | All Rights Reserved</p>
     </footer>
-
+<script>
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
 </body>
 </html>
