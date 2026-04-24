@@ -5,6 +5,9 @@
     <title>Choisir Craft</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -16,7 +19,6 @@
     <span>CHOISIR CRAFT</span>
   </div>
 
-  <!-- HAMBURGER -->
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
   <nav class="nav-links" id="navLinks">
@@ -27,35 +29,55 @@
     <a href="#contact">Contact</a>
   </nav>
 
+  <button class="contact-btn">Contact Us</button>
+
 </header>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-text">
-    <h1>Future-Ready Software Development</h1>
-    <p>We build modern digital solutions for your business.</p>
-    <button class="btn">Start Your Project</button>
+<section class="hero" id="home">
+
+  <div class="hero-text" data-aos="fade-right">
+    <h1>Build Smart <br> Digital Solutions</h1>
+    <p>
+      We create powerful websites, mobile apps, and software
+      that help your business grow faster.
+    </p>
+
+    <div class="hero-buttons">
+      <button class="btn primary">Get Started</button>
+      <button class="btn secondary">View Services</button>
+    </div>
   </div>
 
-  <div class="hero-image">
-    <img src="image.jpeg">
+  <div class="hero-image" data-aos="fade-left">
+    <img src="image.jpeg" alt="Hero Image">
   </div>
+
 </section>
 
 <!-- ABOUT -->
 <section id="about" class="about">
+
   <div class="about-container">
 
-    <div class="about-text">
+    <div class="about-text" data-aos="fade-up">
       <h2>About Us</h2>
-      <p>We create websites, apps, and business solutions.</p>
+      <p>
+        At Choisir Craft, we specialize in building modern digital solutions 
+        including websites, mobile apps, and enterprise systems.
+      </p>
+      <p>
+        Our mission is to help businesses grow using innovative technology 
+        and smart digital strategies.
+      </p>
     </div>
 
-    <div class="about-image">
-      <img src="about.jpeg">
+    <div class="about-image" data-aos="zoom-in">
+      <img src="about.jpeg" alt="About Image">
     </div>
 
   </div>
+
 </section>
 
 <!-- SERVICES -->
@@ -64,22 +86,22 @@
 
   <div class="services-container">
 
-    <article class="service-card">
+    <article class="service-card" data-aos="fade-up">
       <img src="erp.jpg">
       <h3>ERP Systems</h3>
     </article>
 
-    <article class="service-card">
+    <article class="service-card" data-aos="fade-up">
       <img src="web.jpg">
       <h3>Web Development</h3>
     </article>
 
-    <article class="service-card">
+    <article class="service-card" data-aos="fade-up">
       <img src="ecommerce.jpg">
       <h3>E-Commerce</h3>
     </article>
 
-    <article class="service-card">
+    <article class="service-card" data-aos="fade-up">
       <img src="digital.jpg">
       <h3>Digital Growth</h3>
     </article>
@@ -93,17 +115,17 @@
 
   <div class="blog-container">
 
-    <article class="blog-card">
+    <article class="blog-card" data-aos="fade-up">
       <img src="buisiness.jpg">
       <h3>Business Website</h3>
     </article>
 
-    <article class="blog-card">
+    <article class="blog-card" data-aos="fade-up">
       <img src="web.jpg">
       <h3>Web Trends</h3>
     </article>
 
-    <article class="blog-card">
+    <article class="blog-card" data-aos="fade-up">
       <img src="ecommerce.jpg">
       <h3>E-Commerce</h3>
     </article>
@@ -112,17 +134,38 @@
 </section>
 
 <!-- CONTACT -->
+<!-- CONTACT -->
 <section id="contact">
-  <h2>Contact</h2>
+  <h2>Contact Us</h2>
 
   <div class="contact-container">
 
-    <article class="contact-card">
-      <p>📞 +91 9495257093</p>
+    <article class="contact-card" data-aos="zoom-in">
+      <div class="icon">📞</div>
+      <h3>Phone</h3>
+      <p class="highlight">+91 9495257093</p>
+      <p>Call us for immediate assistance</p>
     </article>
 
-    <article class="contact-card">
-      <p>✉️ choisircraft@email.com</p>
+    <article class="contact-card" data-aos="zoom-in">
+      <div class="icon">✉️</div>
+      <h3>Email</h3>
+      <p class="highlight">choisircraft@email.com</p>
+      <p>Send us your queries anytime</p>
+    </article>
+
+    <article class="contact-card" data-aos="zoom-in">
+      <div class="icon">💬</div>
+      <h3>WhatsApp</h3>
+      <p class="highlight">Chat with us</p>
+      <p>Quick response guaranteed</p>
+    </article>
+
+    <article class="contact-card" data-aos="zoom-in">
+      <div class="icon">⏰</div>
+      <h3>Business Hours</h3>
+      <p class="highlight">Mon - Sat: 9AM - 7PM</p>
+      <p>Sunday: 10AM - 4PM</p>
     </article>
 
   </div>
@@ -132,11 +175,23 @@
   <p>© 2026 Choisir Craft</p>
 </footer>
 
-<!-- JS -->
+<!-- AOS JS (MUST be here) -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
 <script>
-function toggleMenu() {
-  document.getElementById("navLinks").classList.toggle("active");
-}
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+  }
+
+  window.addEventListener("scroll", function() {
+    const navbar = document.querySelector(".navbar");
+    navbar.classList.toggle("scrolled", window.scrollY > 50);
+  });
 </script>
 
 </body>

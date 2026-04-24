@@ -1,16 +1,33 @@
+/* ================= GLOBAL ================= */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
+    background: #f5f7fa;
 }
 
-/* NAVBAR */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ================= NAVBAR ================= */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 8%;
     background: white;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar.scrolled {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 .logo {
@@ -23,7 +40,11 @@ body {
     width: 25px;
 }
 
-/* NAV LINKS */
+.logo span {
+    font-weight: bold;
+    color: #28a745;
+}
+
 .nav-links {
     display: flex;
     gap: 20px;
@@ -34,6 +55,10 @@ body {
     color: #333;
 }
 
+.nav-links a:hover {
+    color: #28a745;
+}
+
 /* HAMBURGER */
 .menu-toggle {
     display: none;
@@ -41,58 +66,146 @@ body {
     cursor: pointer;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 .hero {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 40px;
+    padding: 80px 10%;
+    background: linear-gradient(to right, #f8fbff, #eef2f5);
+    flex-wrap: wrap;
 }
 
-.hero img {
-    width: 300px;
+.hero-text {
+    max-width: 520px;
 }
 
-/* ABOUT */
-.about-container {
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.hero-buttons {
     display: flex;
-    justify-content: space-between;
-    padding: 40px;
+    gap: 15px;
 }
 
-.about img {
-    width: 300px;
+.btn {
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
 }
 
-/* SERVICES */
-.services-container {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
+.btn.primary {
+    background: #28a745;
+    color: white;
 }
 
-.service-card {
-    width: 200px;
+.btn.secondary {
+    background: transparent;
+    border: 2px solid #28a745;
+    color: #28a745;
 }
 
-/* BLOG */
-.blog-container {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
+.hero-image img {
+    width: 420px;
+    border-radius: 10px;
 }
 
-.blog-card {
-    width: 200px;
+/* ================= SECTIONS ================= */
+section {
+    padding: 50px 8%;
+    text-align: center;
 }
 
-/* CONTACT */
+/* FLEX CONTAINERS */
+.about-container,
+.services-container,
+.blog-container,
 .contact-container {
     display: flex;
     gap: 20px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
-/* MOBILE */
+/* ================= ABOUT ================= */
+.about-container {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-text {
+    max-width: 500px;
+    text-align: left;
+}
+
+.about-text h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.about-image img {
+    width: 350px;
+    border-radius: 10px;
+}
+
+/* ================= CARDS ================= */
+.service-card,
+.blog-card,
+.contact-card {
+    width: 250px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover,
+.blog-card:hover,
+.contact-card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.service-card img,
+.blog-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* ================= CONTACT ================= */
+.icon {
+    font-size: 30px;
+}
+
+.highlight {
+    color: green;
+    font-weight: bold;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
 
     .menu-toggle {
@@ -103,7 +216,7 @@ body {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 100%;
+        top: 60px;
         left: 0;
         width: 100%;
         background: white;
@@ -113,12 +226,50 @@ body {
         display: flex;
     }
 
-    .hero,
-    .about-container,
-    .services-container,
-    .blog-container,
-    .contact-container {
-        flex-direction: column;
-        align-items: center;
+    .nav-links a {
+        padding: 10px;
+        text-align: center;
     }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 5%;
+    }
+
+    .hero-image img {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .service-card,
+    .blog-card,
+    .contact-card {
+        width: 90%;
+    }
+}
+
+/* BUTTON HOVER */
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* IMAGE ZOOM */
+.hero-image img,
+.about-image img {
+    transition: transform 0.4s ease;
+}
+
+.hero-image img:hover,
+.about-image img:hover {
+    transform: scale(1.05);
 }
